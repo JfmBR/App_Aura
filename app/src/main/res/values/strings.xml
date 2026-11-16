@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Oficina</string>
+    <string name="app_name">AutoOS</string>
 
     <!-- Títulos e ações -->
     <string name="title_orders">Ordens de serviço</string>

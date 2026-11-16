@@ -7,6 +7,9 @@
 - Referência visual (canvas com fundamentos, componentes, XML e 3 telas): https://claude.ai/artifact/7bhKYxRsL2t9f4mr8zVx1t — privado; o dono compartilha pelo menu Share.
 - Prazo curto: se faltar tempo, aplique nesta ordem: 1) cores e tema, 2) campos, 3) card e status, 4) ícones do status.
 
+## Ícone do app
+Ícone adaptativo vetorial: fundo `@color/color_primary` (`ic_launcher_background.xml`) e chave inglesa branca do Material Icons "build" na área segura (`ic_launcher_foreground.xml`, também usado como ícone monocromático). Android 7 (API 24-25) usa `res/mipmap/ic_launcher.xml` e `ic_launcher_round.xml` (layer-list com as mesmas camadas).
+
 ## Cores
 Valores em `res/values/colors.xml`, ligados aos atributos do tema em `res/values/themes.xml`.
 
