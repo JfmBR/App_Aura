@@ -5,6 +5,7 @@
 - minSdk 24; targetSdk/compileSdk = padrão do Android Studio no momento do scaffold (registrado em `docs/setup.md`).
 - SQLite nativo via `SQLiteOpenHelper` (sem Room, sem ORM).
 - UI: Activities + layouts XML, `ListView` com adapter próprio, componentes AppCompat/Material do template.
+- Tema: Material 3 claro com cores próprias (`Theme.Material3.Light.NoActionBar`), sem `values-night`. Especificação em `docs/design.md`.
 - Testes: JUnit 4 do template (testes locais em `app/src/test`).
 - Sem dependências além das que o template já traz.
 
@@ -28,6 +29,15 @@ app/src/main/res/layout/
 ├── form_service_order.xml             Campos do formulário (incluído por cadastro e edição)
 ├── activity_create_order.xml          <include> do formulário + Salvar
 └── activity_edit_order.xml            <include> do formulário + Salvar + Excluir
+app/src/main/res/values/
+├── colors.xml                         Cores do sistema de design (docs/design.md)
+├── themes.xml                         Tema claro + estilos Oficina.TextInput e Oficina.Placa
+├── dimens.xml                         Espaços, área de toque e altura de campo
+└── strings.xml                        Textos da interface e arrays dos Spinners
+app/src/main/res/drawable/
+├── bg_field_outline.xml               Contorno do Spinner
+├── bg_status.xml                      Fundo do chip de status
+└── ic_*.xml                           Ícones (Vector Asset)
 app/src/test/java/br/edu/fasipe/oficina/
 ├── ServiceOrderValidatorTest.java
 └── ArchitectureTest.java              Fronteira de pacotes + teto de 350 linhas
@@ -62,6 +72,8 @@ Navegação: `MainActivity` → `CreateOrderActivity` (FAB) ou `EditOrderActivit
 | `SQLiteOpenHelper` puro | Exigência "SQLite" e didático | Room | brainstorm 16/11/2026 | Se o app crescer |
 | 3 Activities (lista, cadastro, edição) | Requisito 6 da especificação | Fragments, uma Activity só | especificação | — |
 | `ListView` + `ArrayAdapter` | Mais simples para iniciantes | RecyclerView | brainstorm 16/11/2026 | Se a lista ficar lenta |
+| Sistema de design próprio sobre Material 3 claro | Pedido do usuário; leitura rápida no balcão; só recursos XML, sem dependência nova | Tema padrão do template | pedido do usuário 16/11/2026 | Se o prazo apertar: aplicar só cores e tema |
+| Erro de campo no `TextInputLayout` | Mensagem embaixo do campo, como no sistema de design | `EditText.setError` (balão) | pedido do usuário 16/11/2026 | — |
 | Exclusão dentro da edição, com AlertDialog | Menos telas, confirmação explícita | Toque longo na lista | brainstorm 16/11/2026 | — |
 | `onUpgrade` recria a tabela | Sem necessidade de migração no trabalho | Migração com `ALTER TABLE` | brainstorm 16/11/2026 | Se houver dados reais |
 | Sem formatador automático no `check` | Prazo; Android Studio formata | Spotless | brainstorm 16/11/2026 | Se houver conflitos de estilo |

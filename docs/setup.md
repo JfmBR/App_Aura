@@ -38,7 +38,7 @@ Defaults não aplicados (config por ambiente, log, formatador): motivo em `docs/
 | D | Login | não se aplica (sem login, confirmado) | PRODUCT.md |
 | D | Papéis | não se aplica (papel único) | PRODUCT.md |
 | E | Integrações | não se aplica (sem internet, confirmado) | PRODUCT.md |
-| F | Interface, idioma, tema | confirmado (pt-BR, tema padrão) | design.md |
+| F | Interface, idioma, tema | confirmado (pt-BR, sistema de design próprio sobre Material 3 claro, 16/11/2026) | design.md |
 | F | Formato de mensagens | confirmado (setError + Toast) | PRODUCT.md |
 | F | Acessibilidade | confirmado (hints, 48dp, erro no campo) | design.md |
 | F | Design system | confirmado (Material do template) | design.md |
