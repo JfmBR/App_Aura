@@ -82,6 +82,8 @@ Campo opcional vazio é gravado como `NULL`.
 `Erro ao excluir ordem` · `Ordem não encontrada`.
 
 ### Outros
+- Nome do app: **AutoOS** (decisão do usuário, 16/11/2026). Ícone: chave inglesa branca sobre o azul primário (`#1F4E79`).
+  O pacote continua `br.edu.fasipe.oficina`.
 - Idioma da interface: português do Brasil.
 - Dispositivo: celular Android, orientação retrato, minSdk 24.
 - Dados pessoais (nome e telefone do cliente) ficam só no aparelho. Sem envio para rede.

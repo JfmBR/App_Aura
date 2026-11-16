@@ -109,5 +109,5 @@ Decisões duráveis vão para o documento responsável; progresso temporário va
 ## Pendências e próxima entrega
 1. `feat/banco` (PR #3) e `feat/cadastro` (PR #4): mergeadas.
 2. `feat/lista-edicao`: PR #5 aberto; critérios 1–9 testados no emulador. Falta conferir os Toasts e a ordem por datas diferentes.
-3. Depois do merge: `./gradlew assembleDebug` na `main` e entregar `app/build/outputs/apk/debug/app-debug.apk` com o link do repositório.
+3. Depois do merge: `./gradlew assembleDebug` na `main` e entregar `app/build/outputs/apk/debug/AutoOS-debug.apk` com o link do repositório.
 4. Opcional (último item de prioridade do `docs/design.md`): ícones nos chips de status.

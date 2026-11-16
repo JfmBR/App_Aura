@@ -17,7 +17,7 @@ Sem `.env` e sem variáveis de ambiente.
 
 ## Banco de dados
 - O banco `oficina.db` é criado sozinho no aparelho na primeira execução.
-- Para zerar os dados: desinstalar o app do emulador ou Configurações → Apps → Oficina → Armazenamento → Limpar dados.
+- Para zerar os dados: desinstalar o app do emulador ou Configurações → Apps → AutoOS → Armazenamento → Limpar dados.
 - Inspecionar: Android Studio → View → Tool Windows → App Inspection → Database Inspector.
 
 ## Verificar

@@ -2,6 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
+// Nome do arquivo gerado: AutoOS-debug.apk (em vez de app-debug.apk)
+base {
+    archivesName = "AutoOS"
+}
+
 android {
     namespace = "br.edu.fasipe.oficina"
     compileSdk {

@@ -13,7 +13,7 @@ Linux/macOS usam `./gradlew`; Windows usa `gradlew.bat`. Rodar na raiz do projet
 - Formatar: não se aplica: sem formatador automático; use Code → Reformat Code (Ctrl+Alt+L) do Android Studio nos arquivos que editou
 - Tipos: não se aplica: o compilador Java verifica no build
 - Testes: `./gradlew testDebugUnitTest`
-- Build: `./gradlew assembleDebug` (gera `app/build/outputs/apk/debug/app-debug.apk`)
+- Build: `./gradlew assembleDebug` (gera `app/build/outputs/apk/debug/AutoOS-debug.apk`)
 - Verificação completa: `./gradlew lint testDebugUnitTest assembleDebug` — rode antes de declarar uma tarefa concluída.
 
 ## Acordos de trabalho

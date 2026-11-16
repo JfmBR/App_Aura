@@ -1,4 +1,4 @@
-# Oficina — ordens de serviço no Android
+# AutoOS — ordens de serviço para oficinas no Android
 
 App Android para uma oficina mecânica pequena registrar os veículos que entram para serviço: cadastrar, consultar, editar e excluir ordens de serviço, com os dados guardados no próprio aparelho, sem internet.
 
@@ -73,7 +73,7 @@ Pelo terminal, com um emulador aberto:
 ```bash
 ./gradlew installDebug
 ```
-No Windows, use `gradlew.bat` no lugar de `./gradlew`. Passo a passo e problemas conhecidos: [docs/onboarding.md](docs/onboarding.md).
+O APK gerado fica em `app/build/outputs/apk/debug/AutoOS-debug.apk`. No Windows, use `gradlew.bat` no lugar de `./gradlew`. Passo a passo e problemas conhecidos: [docs/onboarding.md](docs/onboarding.md).
 
 ## Documentação
 | Documento | Conteúdo |
