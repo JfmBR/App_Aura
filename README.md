@@ -28,4 +28,4 @@ No Windows use `gradlew.bat` no lugar de `./gradlew`. Sem variáveis de ambiente
 - [Especificação da atividade](Especificações%20do%20app%20aura%20+.md)
 
 ## Próxima entrega
-Base de dados e validação: `ServiceOrder`, `DatabaseHelper`, `ServiceOrderDao` e `ServiceOrderValidator` com testes JUnit passando. Detalhes em [PRODUCT.md](PRODUCT.md#próxima-entrega).
+Cadastro de ordens (`feat/cadastro`), depois lista e edição (`feat/lista-edicao`). Detalhes em [PRODUCT.md](PRODUCT.md#próxima-entrega).

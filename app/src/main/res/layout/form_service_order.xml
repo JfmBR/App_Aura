@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Campos da OS, na ordem de PRODUCT.md. Incluído pelo cadastro e pela edição. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutPlate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_l"
+        android:hint="@string/hint_plate">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPlate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapCharacters"
+            android:maxLength="10" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutVehicleModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_l"
+        android:hint="@string/hint_vehicle_model">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editVehicleModel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Ano e Km lado a lado -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_l"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutVehicleYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_s"
+            android:layout_weight="1"
+            android:hint="@string/hint_vehicle_year">
+
+            <!-- maxLength evita número grande demais para int -->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editVehicleYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutMileage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_s"
+            android:layout_weight="1"
+            android:hint="@string/hint_mileage">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editMileage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="9" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutCustomerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_l"
+        android:hint="@string/hint_customer_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editCustomerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName|textCapWords" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutCustomerPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_l"
+        android:hint="@string/hint_customer_phone">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editCustomerPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:maxLength="20" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/spinnerServiceType"
+        android:text="@string/label_service_type"
+        android:textAppearance="?attr/textAppearanceLabelMedium"
+        android:textColor="?attr/colorOnSurfaceVariant" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/field_height"
+        android:layout_marginTop="@dimen/space_xs"
+        android:layout_marginBottom="@dimen/space_l"
+        android:background="@drawable/bg_field_outline">
+
+        <Spinner
+            android:id="@+id/spinnerServiceType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/service_types" />
+    </FrameLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_l"
+        android:hint="@string/hint_description">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:inputType="textMultiLine|textCapSentences"
+            android:minLines="3" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_l"
+        android:hint="@string/hint_price">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:maxLength="12" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Data não é digitada: o toque abre o DatePickerDialog -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutEntryDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_l"
+        android:hint="@string/hint_entry_date"
+        app:endIconContentDescription="@string/action_pick_date"
+        app:endIconDrawable="@drawable/ic_calendar"
+        app:endIconMode="custom">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEntryDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/spinnerStatus"
+        android:text="@string/label_status"
+        android:textAppearance="?attr/textAppearanceLabelMedium"
+        android:textColor="?attr/colorOnSurfaceVariant" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/field_height"
+        android:layout_marginTop="@dimen/space_xs"
+        android:background="@drawable/bg_field_outline">
+
+        <Spinner
+            android:id="@+id/spinnerStatus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/order_statuses" />
+    </FrameLayout>
+</LinearLayout>

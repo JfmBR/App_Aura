@@ -73,6 +73,7 @@ Campo opcional vazio é gravado como `NULL`.
 | Telefone com quantidade errada de dígitos | `Telefone deve ter 10 ou 11 dígitos` |
 | Tipo de serviço vazio | `Selecione o tipo de serviço` |
 | Valor negativo | `Valor não pode ser negativo` |
+| Valor com texto que não é número (ex.: `.`) | `Valor inválido` (decisão do usuário, 16/11/2026; checado na tela, não no validador, porque `price` é `Double`; vírgula é aceita como separador decimal) |
 | Data vazia | `Informe a data de entrada` |
 | Status vazio | `Selecione o status` |
 
@@ -106,9 +107,14 @@ Nenhuma.
 9. Botão voltar navega de cadastro/edição para a lista sem gravar.
 
 ## Próxima entrega
-**Base de dados e validação** (Pessoa 1, branch `feat/banco`, criada a partir da `main` depois do merge da `docs/harness`):
-scaffold do projeto + `ServiceOrder` + `DatabaseHelper` + `ServiceOrderDao` + `ServiceOrderValidator` + `ServiceOrderValidatorTest` + `ArchitectureTest`,
-com `./gradlew lint testDebugUnitTest assembleDebug` passando.
+Base de dados e validação: entregue na `feat/banco` (PR #3, mergeado).
+
+**Cadastro** (branch `feat/cadastro`): sistema de design (cores, tema, dimens, `strings.xml`), `form_service_order.xml`,
+`ServiceOrderForm` (leitura, erros e data do formulário, reusado pela edição), `CreateOrderActivity`, e na `MainActivity`
+a barra superior e o botão "+" que abre o cadastro. Prova nesta branch: critérios 2, 3 e 9 e o Toast `Ordem salva`; a OS
+gravada é conferida no Database Inspector, porque a lista chega na `feat/lista-edicao`.
+
+Histórico da `feat/banco`:
 
 Pré-requisito: Android Studio instalado. O scaffold é feito pela Pessoa 1 no assistente New Project → "Empty Views Activity"
 (valores em `docs/setup.md` → Componentes), nunca escrito à mão. Ainda na `feat/banco`, a Pessoa 1 move a `MainActivity`
