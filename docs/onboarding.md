@@ -31,4 +31,6 @@ O CRUD é verificado à mão no emulador, seguindo os critérios de aceite de `P
 Leia `AGENTS.md`. `CLAUDE.md` importa as mesmas instruções.
 
 ## Problemas conhecidos
-Nenhum verificado ainda.
+- Máquina com 7 GB de RAM: Android Studio + Gradle + emulador juntos esgotaram a memória e o emulador caiu
+  (`system_server` morto, depois segfault). Feche navegador e programas pesados, rode `./gradlew --stop` antes de abrir o
+  emulador, ou use um celular com depuração USB. Verificado em 16/11/2026.

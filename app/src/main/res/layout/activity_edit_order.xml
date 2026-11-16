@@ -29,7 +29,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/space_l"
+            android:paddingStart="@dimen/space_l"
+            android:paddingTop="@dimen/space_l"
+            android:paddingEnd="@dimen/space_l"
             android:paddingBottom="@dimen/space_xxl">
 
             <include layout="@layout/form_service_order" />

@@ -73,7 +73,7 @@ Com 2 pessoas, a Pessoa 1 também faz `feat/lista-edicao`. `strings.xml` e `Andr
 | install | ok | Gradle Sync do Android Studio, 16/11/2026 |
 | check | ok | `JAVA_HOME=~/android-studio/jbr ./gradlew lint testDebugUnitTest assembleDebug` → `BUILD SUCCESSFUL` na `feat/banco`, 16/11/2026 |
 | regra de fronteira | ok | `ArchitectureTest` (4 testes) passa no `testDebugUnitTest` |
-| dev sobe | pendente | sem emulador |
+| dev sobe | parcial | 16/11/2026: APK instalado no emulador `Medium_Phone_API_37.0` e `MainActivity` abriu (barra + FAB). O emulador sem janela caiu por falta de RAM antes do fluxo de cadastro; CRUD completo não executado pelo agente |
 | teste de dúvida | 2 rodadas; todas as dúvidas resolvidas | ver "Teste de dúvida" abaixo |
 | smoke do harness | não executado | |
 
@@ -107,6 +107,7 @@ Contexto durável: este repositório (`AGENTS.md` + `PRODUCT.md` + `docs/`). Cla
 Decisões duráveis vão para o documento responsável; progresso temporário vai para `docs/handoff.md`.
 
 ## Pendências e próxima entrega
-1. Push e PR da `feat/banco` (base de dados e validação; push só com autorização do usuário).
-2. `feat/cadastro` e `feat/lista-edicao`, cada uma a partir da `main` atualizada.
-3. Teste manual dos critérios de aceite 1–9 no emulador.
+1. `feat/banco` (PR #3) e `feat/cadastro` (PR #4): mergeadas.
+2. `feat/lista-edicao`: PR aberto; teste manual dos critérios de aceite 1–9 no emulador ou celular antes do merge.
+3. Depois do merge: `./gradlew assembleDebug` na `main` e entregar `app/build/outputs/apk/debug/app-debug.apk` com o link do repositório.
+4. Opcional (último item de prioridade do `docs/design.md`): ícones nos chips de status.
