@@ -151,10 +151,12 @@
         android:layout_marginBottom="@dimen/space_l"
         android:hint="@string/hint_price">
 
+        <!-- digits aceita vírgula: numberDecimal sozinho descarta "," e 150,50 virava 15050 -->
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:digits="0123456789.,"
             android:inputType="numberDecimal"
             android:maxLength="12" />
     </com.google.android.material.textfield.TextInputLayout>
