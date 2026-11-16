@@ -9,7 +9,7 @@
 - Testes: JUnit 4 do template (testes locais em `app/src/test`).
 - Sem dependências além das que o template já traz.
 
-Estado: **scaffold pendente** (ver `docs/setup.md`). A árvore abaixo é a estrutura a criar.
+Estado: scaffold criado; `model`, `data` e `validation` implementados. Telas (`ui`) em andamento. Versões reais em `docs/setup.md`.
 
 ## Mapa do código
 ```text

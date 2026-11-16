@@ -2,7 +2,7 @@
 
 ## Contexto
 - Data: 16/11/2026. Skill `project-harness` (adaptação do vibe-coding-toolkit), Claude Code.
-- Máquina: Linux (Debian, kernel 6.12). **Sem JDK e sem Android SDK** no momento do brainstorm.
+- Máquina: Linux (Debian, kernel 6.12). **Sem JDK e sem Android SDK** no momento do brainstorm; Android Studio instalado depois, no mesmo dia.
 - Branch: `docs/harness`.
 
 ## Decisões e fontes
@@ -12,9 +12,9 @@ Defaults não aplicados (config por ambiente, log, formatador): motivo em `docs/
 ## Componentes
 | Componente | Ação e motivo | Onde | Estado e evidência |
 |---|---|---|---|
-| Android Studio (JDK + SDK) | Usuário vai instalar | Global do usuário | pendente |
-| Scaffold "Empty Views Activity" (Java, minSdk 24, pacote `br.edu.fasipe.oficina`, nome "Oficina") | Template oficial do Android Studio | Raiz do repositório | pendente |
-| Versões reais (AGP, Gradle, compileSdk, targetSdk) | Registrar após o scaffold | — | pendente |
+| Android Studio (JDK + SDK) | Instalado pelo usuário | `~/android-studio` (JDK em `jbr`), SDK em `~/Android/Sdk` | feito: Android Studio 2026.2.2, JetBrains JDK 25.0.4, emulador `Medium_Phone_API_37.0` |
+| Scaffold "Empty Views Activity" (Java, minSdk 24, pacote `br.edu.fasipe.oficina`, nome "Oficina") | Template oficial do Android Studio | Raiz do repositório | feito (commit `chore: cria projeto Android pelo template Empty Views Activity`) |
+| Versões reais (AGP, Gradle, compileSdk, targetSdk) | Geradas pelo template | `gradle/libs.versions.toml`, `gradle/wrapper/gradle-wrapper.properties`, `app/build.gradle.kts` | AGP 9.5.1, Gradle 9.6.0, compileSdk 37, targetSdk 37, minSdk 24, Java 11 (source/target), Material 1.10.0 |
 
 ## Checklist de decisões
 | Bloco | Item | Estado | Registrado em |
@@ -64,14 +64,15 @@ Defaults não aplicados (config por ambiente, log, formatador): motivo em `docs/
 | Pessoa 2 | `feat/cadastro` | `form_service_order.xml`, `strings.xml` dos campos, `CreateOrderActivity` |
 | Pessoa 3 | `feat/lista-edicao` | `MainActivity`, `ServiceOrderAdapter`, `item_service_order.xml`, `EditOrderActivity` |
 
+Decisão do usuário (16/11/2026): por falta de tempo da equipe, as 3 branches são feitas pelo usuário com o agente, em sequência.
 Com 2 pessoas, a Pessoa 1 também faz `feat/lista-edicao`. `strings.xml` e `AndroidManifest.xml` são compartilhados: combinem quem edita para evitar conflito.
 
 ## Checks
 | Item | Estado | Evidência |
 |---|---|---|
-| install | pendente | sem JDK/SDK na máquina |
-| check | pendente | sem JDK/SDK na máquina |
-| regra de fronteira | pendente | `ArchitectureTest` ainda não existe |
+| install | ok | Gradle Sync do Android Studio, 16/11/2026 |
+| check | ok | `JAVA_HOME=~/android-studio/jbr ./gradlew lint testDebugUnitTest assembleDebug` → `BUILD SUCCESSFUL` na `feat/banco`, 16/11/2026 |
+| regra de fronteira | ok | `ArchitectureTest` (4 testes) passa no `testDebugUnitTest` |
 | dev sobe | pendente | sem emulador |
 | teste de dúvida | 2 rodadas; todas as dúvidas resolvidas | ver "Teste de dúvida" abaixo |
 | smoke do harness | não executado | |
@@ -106,7 +107,6 @@ Contexto durável: este repositório (`AGENTS.md` + `PRODUCT.md` + `docs/`). Cla
 Decisões duráveis vão para o documento responsável; progresso temporário vai para `docs/handoff.md`.
 
 ## Pendências e próxima entrega
-0. Push da `docs/harness`, PR e merge na `main` (ainda não feito; push só com autorização do usuário).
-1. Instalar Android Studio e criar o scaffold com os valores da tabela "Componentes", na `feat/banco` criada da `main`.
-2. Registrar versões reais e rodar `./gradlew lint testDebugUnitTest assembleDebug`.
-3. Próxima entrega: base de dados e validação (`PRODUCT.md` → Próxima entrega).
+1. Push e PR da `feat/banco` (base de dados e validação; push só com autorização do usuário).
+2. `feat/cadastro` e `feat/lista-edicao`, cada uma a partir da `main` atualizada.
+3. Teste manual dos critérios de aceite 1–9 no emulador.

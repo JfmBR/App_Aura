@@ -1,6 +1,8 @@
-package br.edu.fasipe.oficina;
+package br.edu.fasipe.oficina.ui;
 
 import android.os.Bundle;
+
+import br.edu.fasipe.oficina.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
