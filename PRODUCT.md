@@ -109,7 +109,13 @@ Nenhuma.
 ## Próxima entrega
 Base de dados e validação: entregue na `feat/banco` (PR #3, mergeado).
 
-**Cadastro** (branch `feat/cadastro`): sistema de design (cores, tema, dimens, `strings.xml`), `form_service_order.xml`,
+Cadastro: entregue na `feat/cadastro` (PR #4, mergeado).
+
+**Lista e edição** (branch `feat/lista-edicao`): `MainActivity` com `ListView`, texto de lista vazia e recarga em `onResume`;
+`ServiceOrderAdapter` e `item_service_order.xml` (card com chip de status colorido); `EditOrderActivity` com os 11 campos
+carregados, Salvar, Excluir com confirmação e `Ordem não encontrada`. Prova: check verde + critérios 1–9 à mão no emulador.
+
+Histórico da `feat/cadastro`: sistema de design (cores, tema, dimens, `strings.xml`), `form_service_order.xml`,
 `ServiceOrderForm` (leitura, erros e data do formulário, reusado pela edição), `CreateOrderActivity`, e na `MainActivity`
 a barra superior e o botão "+" que abre o cadastro. Prova nesta branch: critérios 2, 3 e 9 e o Toast `Ordem salva`; a OS
 gravada é conferida no Database Inspector, porque a lista chega na `feat/lista-edicao`.

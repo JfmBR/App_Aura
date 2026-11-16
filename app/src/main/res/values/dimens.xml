@@ -8,4 +8,6 @@
     <dimen name="space_xxl">32dp</dimen>
     <dimen name="touch_min">48dp</dimen>
     <dimen name="field_height">56dp</dimen>
+    <!-- Espaço no fim da lista para o FAB não cobrir o último card -->
+    <dimen name="list_bottom_space">96dp</dimen>
 </resources>

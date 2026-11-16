@@ -243,6 +243,7 @@ Supõe o nome `Base.Theme.Oficina`; use o nome que o template gerou.
 ```
 
 ### Cor do status no `ServiceOrderAdapter`
+No código real a cor é escolhida pela **posição** do status em `order_statuses` (arrays de cores na mesma ordem), não pelo texto: `PRODUCT.md` proíbe copiar os valores dos Spinners em Java. O trecho abaixo mostra só a ideia.
 ```java
 // Pinta o chip conforme o status (valores de order_statuses)
 int bg = R.color.status_open_bg;
