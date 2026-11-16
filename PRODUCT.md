@@ -111,18 +111,25 @@ com `./gradlew lint testDebugUnitTest assembleDebug` passando.
 
 Pré-requisito: Android Studio instalado. O scaffold é feito pela Pessoa 1 no assistente New Project → "Empty Views Activity"
 (valores em `docs/setup.md` → Componentes), nunca escrito à mão. Ainda na `feat/banco`, a Pessoa 1 move a `MainActivity`
-gerada para o pacote `ui` (Refactor → Move, que atualiza o Manifest) e apaga o teste de exemplo do template; o conteúdo da
+gerada para o pacote `ui` (Refactor → Move, que atualiza o Manifest) e apaga os dois testes de exemplo do template
+(`ExampleUnitTest` e `ExampleInstrumentedTest`); o conteúdo da
 `MainActivity` fica para a Pessoa 3.
 
 ### Contratos
 - `model/ServiceOrder`: campos da tabela acima. `id` é `long` (0 = ainda não gravada). `vehicleYear` e `mileage` são `Integer`, `price` é `Double` (`null` = não informado). Demais campos `String`.
 - `data/DatabaseHelper extends SQLiteOpenHelper`: banco `oficina.db`, versão 1. `onUpgrade` apaga e recria a tabela.
+  `NOT NULL` nas 7 colunas obrigatórias (`plate`, `vehicle_model`, `customer_name`, `customer_phone`, `service_type`,
+  `entry_date`, `status`). Sem `CHECK`: as regras ficam no validador.
+- Erro de SQLite: o DAO captura `SQLiteException` em todos os métodos, registra `Log.e` sem dados do cliente e devolve o
+  valor de falha abaixo. O app nunca fecha por erro de banco.
 - `data/ServiceOrderDao` (recebe `Context`):
   - `long insert(ServiceOrder)` → id novo, ou `-1` em erro.
-  - `List<ServiceOrder> findAll()` → ordenado por `entry_date DESC, id DESC`; lista vazia se não houver registros.
-  - `ServiceOrder findById(long id)` → `null` se não existir.
+  - `List<ServiceOrder> findAll()` → ordenado por `entry_date DESC, id DESC`; lista vazia se não houver registros ou em erro.
+  - `ServiceOrder findById(long id)` → `null` se não existir ou em erro.
   - `int update(ServiceOrder)` → linhas alteradas (1 ok, 0 = não encontrada/erro).
-  - `int delete(long id)` → linhas removidas (1 ok, 0 = não encontrada).
+  - `int delete(long id)` → linhas removidas (1 ok, 0 = não encontrada/erro).
+  - Nas telas: `update`/`delete` com 0 → `Erro ao atualizar ordem` / `Erro ao excluir ordem`. `Ordem não encontrada`
+    só aparece quando `findById` devolve `null` ao abrir a edição.
 - `validation/ServiceOrderValidator` (Java puro, sem classes Android):
   - `static String normalizePlate(String)` → maiúsculas, sem `-` e espaços; `null` vira `""`.
   - `static String digitsOnly(String)` → só dígitos; `null` vira `""`.
@@ -145,5 +152,6 @@ gerada para o pacote `ui` (Refactor → Move, que atualiza o Manifest) e apaga o
 
 ### Como provar sem dados reais
 - Validador: JUnit local (`testDebugUnitTest`), sem emulador.
-- DAO: teste manual no emulador seguindo os critérios de aceite 1–7 (decisão: sem teste instrumentado nesta entrega).
+- DAO: nesta entrega, prova só pelo `check` (compila). Sem teste instrumentado e sem código provisório em telas.
+  O CRUD é verificado à mão no emulador (critérios 1–7) quando as telas das Pessoas 2 e 3 chegarem, antes da entrega final.
 - Fronteira e teto de linhas: `ArchitectureTest` (JUnit local), ver `docs/quality.md`.

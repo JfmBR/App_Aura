@@ -57,6 +57,6 @@ Linux/macOS usam `./gradlew`; Windows usa `gradlew.bat`. Rodar na raiz do projet
 - Pacote raiz `br.edu.fasipe.oficina`, subpacotes `model`, `data`, `validation`, `ui`.
 - `ui` nunca importa `android.database.*` nem `DatabaseHelper`; usa `ServiceOrderDao`.
 - Nomes de classes, métodos e variáveis em inglês; comentários em português.
-- Textos da interface em `res/values/strings.xml`, em português.
+- Textos da interface em `res/values/strings.xml`, em português. Exceção: mensagens de validação ficam fixas no `ServiceOrderValidator` (Java puro, testável sem Android).
 - Erro de campo: `EditText.setError(mensagem)`. Retorno de operação: `Toast`. Textos exatos em `PRODUCT.md`.
 - Máximo de 350 linhas por arquivo `.java`.

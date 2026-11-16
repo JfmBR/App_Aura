@@ -73,7 +73,7 @@ Com 2 pessoas, a Pessoa 1 também faz `feat/lista-edicao`. `strings.xml` e `Andr
 | check | pendente | sem JDK/SDK na máquina |
 | regra de fronteira | pendente | `ArchitectureTest` ainda não existe |
 | dev sobe | pendente | sem emulador |
-| teste de dúvida | rodada 1: 7 dúvidas | ver "Teste de dúvida" abaixo |
+| teste de dúvida | 2 rodadas; todas as dúvidas resolvidas | ver "Teste de dúvida" abaixo |
 | smoke do harness | não executado | |
 
 ## Teste de dúvida
@@ -88,11 +88,25 @@ Rodada 1 (subagente, contexto novo, só docs): 7 dúvidas.
 | `feat/banco` sai de onde | nova → usuário decidiu | da `main` após merge da `docs/harness` |
 | "topo da lista" × `entry_date DESC` | contradição | critério 1 reescrito pela ordenação |
 
+Rodada 2: 7 dúvidas.
+| Dúvida | Classe | Resolução |
+|---|---|---|
+| Como provar o DAO sem telas | nova → usuário decidiu | só `check`; CRUD manual quando as telas chegarem |
+| Retorno do DAO em erro de SQLite | nova → usuário decidiu | captura `SQLiteException`; valores de falha em PRODUCT.md |
+| `NOT NULL`/`CHECK` | nova → usuário decidiu | `NOT NULL` nos 7 obrigatórios, sem `CHECK` |
+| Qual teste de exemplo apagar | ambíguo | os dois |
+| `docs/harness` já mergeada? | estado | não; ver Pendências |
+| Mensagens no Java × `strings.xml` | contradição | exceção registrada no AGENTS.md |
+| Especificação não lida | fora do escopo do teste | PRODUCT.md cobre os 12 requisitos |
+
+Parei após 2 rodadas: as dúvidas restantes eram de texto, não de decisão.
+
 ## Memória e contexto
 Contexto durável: este repositório (`AGENTS.md` + `PRODUCT.md` + `docs/`). Claude carrega via `CLAUDE.md` → `@AGENTS.md`.
 Decisões duráveis vão para o documento responsável; progresso temporário vai para `docs/handoff.md`.
 
 ## Pendências e próxima entrega
-1. Instalar Android Studio e criar o scaffold com os valores da tabela "Componentes".
+0. Push da `docs/harness`, PR e merge na `main` (ainda não feito; push só com autorização do usuário).
+1. Instalar Android Studio e criar o scaffold com os valores da tabela "Componentes", na `feat/banco` criada da `main`.
 2. Registrar versões reais e rodar `./gradlew lint testDebugUnitTest assembleDebug`.
 3. Próxima entrega: base de dados e validação (`PRODUCT.md` → Próxima entrega).
