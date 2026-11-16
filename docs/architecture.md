@@ -9,7 +9,7 @@
 - Testes: JUnit 4 do template (testes locais em `app/src/test`).
 - Sem dependências além das que o template já traz.
 
-Estado: scaffold criado; `model`, `data`, `validation` e cadastro implementados. Lista e edição em andamento. Versões reais em `docs/setup.md`.
+Estado: todas as camadas e telas implementadas (lista, cadastro, edição e exclusão). CRUD ainda sem teste manual completo no emulador. Versões reais em `docs/setup.md`.
 
 ## Mapa do código
 ```text

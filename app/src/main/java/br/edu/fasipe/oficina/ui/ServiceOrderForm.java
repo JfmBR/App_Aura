@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.Map;
@@ -72,10 +73,49 @@ public class ServiceOrderForm {
                 calendar.get(Calendar.DAY_OF_MONTH));
     }
 
+    /** yyyy-MM-dd (banco) -> dd/MM/yyyy (tela). */
+    public static String toDisplayDate(String isoDate) {
+        String[] parts = isoDate.split("-");
+        if (parts.length != 3) {
+            return isoDate;
+        }
+        return parts[2] + "/" + parts[1] + "/" + parts[0];
+    }
+
     /** Mostra no campo uma data yyyy-MM-dd como dd/MM/yyyy. */
     public void setEntryDate(String isoDate) {
-        String[] parts = isoDate.split("-");
-        layoutEntryDate.getEditText().setText(parts[2] + "/" + parts[1] + "/" + parts[0]);
+        layoutEntryDate.getEditText().setText(toDisplayDate(isoDate));
+    }
+
+    /** Preenche os 11 campos com uma OS do banco (edição). */
+    public void fill(ServiceOrder order) {
+        setText(layoutPlate, order.getPlate());
+        setText(layoutVehicleModel, order.getVehicleModel());
+        setText(layoutVehicleYear, order.getVehicleYear());
+        setText(layoutMileage, order.getMileage());
+        setText(layoutCustomerName, order.getCustomerName());
+        setText(layoutCustomerPhone, order.getCustomerPhone());
+        selectValue(spinnerServiceType, order.getServiceType());
+        setText(layoutDescription, order.getDescription());
+        // toPlainString evita notação científica (ex.: 1.0E7)
+        setText(layoutPrice, order.getPrice() == null ? null
+                : BigDecimal.valueOf(order.getPrice()).stripTrailingZeros().toPlainString());
+        setEntryDate(order.getEntryDate());
+        selectValue(spinnerStatus, order.getStatus());
+    }
+
+    private static void setText(TextInputLayout layout, Object value) {
+        layout.getEditText().setText(value == null ? "" : value.toString());
+    }
+
+    // Seleciona o item do Spinner com esse texto (valores vêm do strings.xml)
+    private static void selectValue(Spinner spinner, String value) {
+        for (int i = 0; i < spinner.getCount(); i++) {
+            if (spinner.getItemAtPosition(i).toString().equals(value)) {
+                spinner.setSelection(i);
+                return;
+            }
+        }
     }
 
     /** Monta a OS com os valores já normalizados, como PRODUCT.md pede. */

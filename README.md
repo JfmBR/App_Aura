@@ -28,4 +28,4 @@ No Windows use `gradlew.bat` no lugar de `./gradlew`. Sem variáveis de ambiente
 - [Especificação da atividade](Especificações%20do%20app%20aura%20+.md)
 
 ## Próxima entrega
-Cadastro de ordens (`feat/cadastro`), depois lista e edição (`feat/lista-edicao`). Detalhes em [PRODUCT.md](PRODUCT.md#próxima-entrega).
+Lista, edição e exclusão (`feat/lista-edicao`); depois, teste manual dos critérios de aceite 1–9 e APK debug para entrega. Detalhes em [PRODUCT.md](PRODUCT.md#próxima-entrega).

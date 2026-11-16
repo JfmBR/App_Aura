@@ -28,6 +28,23 @@
     <!-- Retorno das operações (Toast) -->
     <string name="toast_order_saved">Ordem salva</string>
     <string name="toast_save_error">Erro ao salvar ordem</string>
+    <string name="toast_order_updated">Ordem atualizada</string>
+    <string name="toast_update_error">Erro ao atualizar ordem</string>
+    <string name="toast_order_deleted">Ordem excluída</string>
+    <string name="toast_delete_error">Erro ao excluir ordem</string>
+    <string name="toast_order_not_found">Ordem não encontrada</string>
+
+    <!-- Lista -->
+    <string name="empty_orders">Nenhuma ordem cadastrada. Toque em + para criar.</string>
+    <!-- Linha 2 do item: modelo · ano -->
+    <string name="item_model_year">%1$s · %2$d</string>
+
+    <!-- Edição e exclusão -->
+    <string name="title_edit_order">Editar ordem</string>
+    <string name="button_delete">Excluir</string>
+    <string name="dialog_delete_title">Excluir esta ordem?</string>
+    <string name="dialog_yes">Sim</string>
+    <string name="dialog_no">Não</string>
 
     <!-- 1º item = nenhum selecionado (vira "" na Activity) -->
     <string-array name="service_types">
