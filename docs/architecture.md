@@ -9,7 +9,7 @@
 - Testes: JUnit 4 do template (testes locais em `app/src/test`).
 - Sem dependências além das que o template já traz.
 
-Estado: scaffold criado; `model`, `data` e `validation` implementados. Telas (`ui`) em andamento. Versões reais em `docs/setup.md`.
+Estado: scaffold criado; `model`, `data`, `validation` e cadastro implementados. Lista e edição em andamento. Versões reais em `docs/setup.md`.
 
 ## Mapa do código
 ```text
@@ -21,6 +21,7 @@ app/src/main/java/br/edu/fasipe/oficina/
 └── ui/
     ├── MainActivity.java              Lista (consulta) + botão "+"
     ├── ServiceOrderAdapter.java       Item da lista (ArrayAdapter<ServiceOrder>)
+    ├── ServiceOrderForm.java          Lê o formulário, mostra erros e abre o DatePicker (cadastro e edição)
     ├── CreateOrderActivity.java       Cadastro
     └── EditOrderActivity.java         Edição + exclusão
 app/src/main/res/layout/
@@ -74,6 +75,8 @@ Navegação: `MainActivity` → `CreateOrderActivity` (FAB) ou `EditOrderActivit
 | `ListView` + `ArrayAdapter` | Mais simples para iniciantes | RecyclerView | brainstorm 16/11/2026 | Se a lista ficar lenta |
 | Sistema de design próprio sobre Material 3 claro | Pedido do usuário; leitura rápida no balcão; só recursos XML, sem dependência nova | Tema padrão do template | pedido do usuário 16/11/2026 | Se o prazo apertar: aplicar só cores e tema |
 | Erro de campo no `TextInputLayout` | Mensagem embaixo do campo, como no sistema de design | `EditText.setError` (balão) | pedido do usuário 16/11/2026 | — |
+| `ServiceOrderForm` compartilhado pelo cadastro e pela edição | Evita copiar ~150 linhas de leitura/erro/data nas duas Activities; só cuida da tela (sem DAO, Toast ou `finish`) | Código repetido em cada Activity | 16/11/2026 | — |
+| Toolbar e FAB da `MainActivity` na `feat/cadastro` | O fluxo 2 começa no "+" e o cadastro precisa de teste manual antes do merge | Esperar a `feat/lista-edicao` | 16/11/2026 | — |
 | Exclusão dentro da edição, com AlertDialog | Menos telas, confirmação explícita | Toque longo na lista | brainstorm 16/11/2026 | — |
 | `onUpgrade` recria a tabela | Sem necessidade de migração no trabalho | Migração com `ALTER TABLE` | brainstorm 16/11/2026 | Se houver dados reais |
 | Sem formatador automático no `check` | Prazo; Android Studio formata | Spotless | brainstorm 16/11/2026 | Se houver conflitos de estilo |

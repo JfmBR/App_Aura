@@ -1,9 +1,37 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Oficina" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- Tema claro do app (sem values-night: sempre claro). Cores em docs/design.md -->
+    <style name="Base.Theme.Oficina" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/color_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/color_on_primary_container</item>
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/color_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/color_on_secondary_container</item>
+        <item name="colorError">@color/color_error</item>
+        <item name="android:colorBackground">@color/color_surface</item>
+        <item name="colorSurface">@color/color_surface</item>
+        <item name="colorOnSurface">@color/color_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/color_on_surface_variant</item>
+        <item name="colorOutline">@color/color_outline</item>
+        <item name="colorOutlineVariant">@color/color_outline_variant</item>
+        <item name="textInputStyle">@style/Widget.Oficina.TextInput</item>
     </style>
 
     <style name="Theme.Oficina" parent="Base.Theme.Oficina" />
+
+    <style name="Widget.Oficina.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+    </style>
+
+    <style name="TextAppearance.Oficina.Placa" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
 </resources>

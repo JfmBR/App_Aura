@@ -1,5 +1,6 @@
 package br.edu.fasipe.oficina.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import br.edu.fasipe.oficina.R;
@@ -22,5 +23,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Botão "+" abre o cadastro (fluxo 2)
+        findViewById(R.id.fabNewOrder).setOnClickListener(
+                v -> startActivity(new Intent(this, CreateOrderActivity.class)));
     }
 }

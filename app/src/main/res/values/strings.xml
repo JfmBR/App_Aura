@@ -1,3 +1,50 @@
 <resources>
     <string name="app_name">Oficina</string>
+
+    <!-- Títulos e ações -->
+    <string name="title_orders">Ordens de serviço</string>
+    <string name="title_new_order">Nova ordem</string>
+    <string name="fab_new_order">Nova ordem</string>
+    <string name="action_back">Voltar</string>
+    <string name="button_save">Salvar</string>
+
+    <!-- Rótulos do formulário (obrigatórios terminam com *) -->
+    <string name="hint_plate">Placa *</string>
+    <string name="hint_vehicle_model">Modelo *</string>
+    <string name="hint_vehicle_year">Ano</string>
+    <string name="hint_mileage">Km</string>
+    <string name="hint_customer_name">Nome do cliente *</string>
+    <string name="hint_customer_phone">Telefone *</string>
+    <string name="label_service_type">Tipo de serviço *</string>
+    <string name="hint_description">Descrição</string>
+    <string name="hint_price">Valor (R$)</string>
+    <string name="hint_entry_date">Data de entrada *</string>
+    <string name="label_status">Status *</string>
+    <string name="action_pick_date">Escolher data</string>
+
+    <!-- Erro de campo que não vem do validador (texto não numérico no Valor) -->
+    <string name="error_price_invalid">Valor inválido</string>
+
+    <!-- Retorno das operações (Toast) -->
+    <string name="toast_order_saved">Ordem salva</string>
+    <string name="toast_save_error">Erro ao salvar ordem</string>
+
+    <!-- 1º item = nenhum selecionado (vira "" na Activity) -->
+    <string-array name="service_types">
+        <item>Selecione...</item>
+        <item>Revisão</item>
+        <item>Troca de óleo</item>
+        <item>Freios</item>
+        <item>Suspensão</item>
+        <item>Elétrica</item>
+        <item>Motor</item>
+        <item>Outro</item>
+    </string-array>
+
+    <string-array name="order_statuses">
+        <item>Aberta</item>
+        <item>Em andamento</item>
+        <item>Concluída</item>
+        <item>Entregue</item>
+    </string-array>
 </resources>

@@ -2,4 +2,28 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Sistema de design da Oficina (docs/design.md) -->
+    <color name="color_primary">#1F4E79</color>
+    <color name="color_primary_container">#D3E4F7</color>
+    <color name="color_on_primary_container">#0B2A45</color>
+    <color name="color_secondary">#B4500A</color>
+    <color name="color_secondary_container">#FFDCC4</color>
+    <color name="color_on_secondary_container">#5C2700</color>
+    <color name="color_error">#BA1A1A</color>
+    <color name="color_surface">#F8F9FB</color>
+    <color name="color_on_surface">#1A1C1E</color>
+    <color name="color_on_surface_variant">#43474E</color>
+    <color name="color_outline">#73777F</color>
+    <color name="color_outline_variant">#C3C7CF</color>
+
+    <!-- Chip de status na lista -->
+    <color name="status_open_bg">#D3E4F7</color>
+    <color name="status_open_text">#0B2A45</color>
+    <color name="status_in_progress_bg">#FFDCC4</color>
+    <color name="status_in_progress_text">#5C2700</color>
+    <color name="status_done_bg">#CDEBD3</color>
+    <color name="status_done_text">#0D3B1C</color>
+    <color name="status_delivered_bg">#E2E2E6</color>
+    <color name="status_delivered_text">#303236</color>
 </resources>
