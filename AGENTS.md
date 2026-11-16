@@ -58,5 +58,6 @@ Linux/macOS usam `./gradlew`; Windows usa `gradlew.bat`. Rodar na raiz do projet
 - `ui` nunca importa `android.database.*` nem `DatabaseHelper`; usa `ServiceOrderDao`.
 - Nomes de classes, métodos e variáveis em inglês; comentários em português.
 - Textos da interface em `res/values/strings.xml`, em português. Exceção: mensagens de validação ficam fixas no `ServiceOrderValidator` (Java puro, testável sem Android).
-- Erro de campo: `EditText.setError(mensagem)`. Retorno de operação: `Toast`. Textos exatos em `PRODUCT.md`.
+- Erro de campo: `TextInputLayout.setError(mensagem)` (Spinner: `TextView` do item selecionado). Retorno de operação: `Toast`. Textos exatos em `PRODUCT.md`.
+- Visual: cores, estilos e componentes do sistema de design em `docs/design.md`. Não use cor fixa em layout: use `@color/...` ou `?attr/...` do tema.
 - Máximo de 350 linhas por arquivo `.java`.

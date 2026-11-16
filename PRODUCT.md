@@ -84,7 +84,8 @@ Campo opcional vazio é gravado como `NULL`.
 - Idioma da interface: português do Brasil.
 - Dispositivo: celular Android, orientação retrato, minSdk 24.
 - Dados pessoais (nome e telefone do cliente) ficam só no aparelho. Sem envio para rede.
-- Acessibilidade: todo campo tem rótulo (`hint`), erros aparecem no próprio campo.
+- Acessibilidade: todo campo tem rótulo (`hint` do `TextInputLayout`; no Spinner, `TextView` com `labelFor`), erros aparecem no próprio campo.
+- Visual: sistema de design próprio sobre o Material 3 claro (cores, tipografia, componentes e trechos XML em `docs/design.md`).
 
 ## Restrições e decisões técnicas
 Java + Android Studio + SQLite (`SQLiteOpenHelper`, sem Room), Activities com layouts XML, sem internet.
